@@ -7,6 +7,14 @@ public class SubstringEmail {
 	}
 
 	public String truncateWhole(String emailInput, Integer truncateLength) {
+		if (emailInput == null) {
+			return null;
+		}
+		
+		if (truncateLength == null || truncateLength.intValue() < 0) {
+			throw new NullPointerException("truncateLength must be a positive Integer");
+		}
+
 		if (emailInput.length() >= truncateLength) {
 			return emailInput.substring(0, truncateLength.intValue());
 		}
