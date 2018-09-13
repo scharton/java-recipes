@@ -46,14 +46,15 @@ public class SubstringEmail {
 			return emailInput;
 		}
 
-		String emailPart = emailInputParts[0].length() > emailLength ? emailInputParts[0].substring(0, emailLength) : emailInputParts[0];
-		String domainPart = emailInputParts[1].length() > domainLength ? emailInputParts[1].substring(0, domainLength) : emailInputParts[1];
-		return emailPart + "@" + domainPart;
-		// for (String p : emailInputParts) {
-		//
-		//
-		// System.out.println(p);
-		// }
+		String emailPart = emailInputParts[0];
+		if (emailInputParts[0].length() > emailLength) {
+			emailPart = emailInputParts[0].substring(0, emailLength);
+		}
 
+		String domainPart = emailInputParts[1];
+		if (emailInputParts[1].length() > domainLength) {
+			domainPart = emailInputParts[1].substring(0, domainLength);
+		}
+		return emailPart + "@" + domainPart;
 	}
 }
