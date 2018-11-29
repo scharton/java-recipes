@@ -8,7 +8,10 @@ public class HelloMain {
 
 	public static void main(String[] args) {
 		HelloMain hm = new HelloMain();
+		String s = "foo";
+		String t = "bar";
 		System.out.println(hm.getHelloMessage());
+
 	}
 
 }
